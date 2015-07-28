@@ -1,0 +1,58 @@
+html, body, h1, section {
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  width: 130px;
+}
+
+group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  font-family: monospace;
+  font-size: 18px;
+  width: 500px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul li {
+  float: left;
+  border: 1px solid gray;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.board {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.snake {
+  z-index: 1;
+  background: green;
+  border: 1px solid gray;
+  width: 10px;
+  height: 10px;
+  border-radius: 0px;
+}
+
+.apple {
+  background: red;
+  border: 1px solid gray;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
