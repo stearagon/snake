@@ -24,7 +24,7 @@
       }
     });
 
-    window.setInterval(this.step.bind(this), 500);
+    window.setInterval(this.step.bind(this), 100);
   };
 
   View.prototype.step = function () {
