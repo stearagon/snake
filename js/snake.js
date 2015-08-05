@@ -24,19 +24,38 @@
 
   var Snake = SnakeGame.Snake = function (dir) {
     this.dir = dir;
-    this.segments = [new Coord([5,6],this.dir),new Coord([5,5],this.dir),new Coord([5,4],this.dir)];
+    this.segments = [new Coord([6,4],this.dir),new Coord([5,4],this.dir),new Coord([4,4],this.dir)];
+    this.over = false;
   }
 
   Snake.prototype.move = function() {
     var dir = this.dir;
-    var newPosX = this.segments[0].posX + this.dir[0];
-    var newPosY = this.segments[0].posY + this.dir[1];
+    var newPosX = this.segments[0].posX + this.dir[1];
+    var newPosY = this.segments[0].posY + this.dir[0];
+
+    this.checkBoard([newPosX, newPosY]);
 
     var newHead = this.segments.pop();
     newHead.dir = this.dir;
     newHead.posX = newPosX;
     newHead.posY = newPosY;
     this.segments.unshift(newHead);
+  }
+
+  Snake.prototype.checkBoard = function (head){
+    if (head[0] > 9 || head[1] > 9 || head[1] < 0 || head[0] < 0){
+
+      {$(".main").append("<h1 class=\"gameover\">Game Over!</h1>")}
+      this.over = true;
+    } else {
+      this.segments.slice(1).forEach(function(seg){
+        if (this.segments[0].posX === seg.posX && this.segments[0].posY === seg.posY){
+          debugger
+          this.over = true;
+          {$(".main").append("<h1 class=\"gameover\">Game Over!</h1>")}
+        }
+      }.bind(this))
+    }
   }
 
   Snake.prototype.turn = function (newDir) {
