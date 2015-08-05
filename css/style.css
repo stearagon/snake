@@ -46,6 +46,7 @@ ul li {
 .main {
   overflow: hidden;
   margin: 0 auto;
+  position: relative;
 }
 
 .board {
@@ -72,4 +73,20 @@ ul li {
   width: 20px;
   height: 20px;
   border-radius: 5px;
+}
+
+button {
+  color: #fff;
+  background: #000;
+  position: absolute;
+  z-index: 6;
+  left: 229px;
+  top: 142px;
+  font-size: 30px;
+  font-family: monospace;
+}
+
+button:hover {
+  color: #000;
+  background: #fff;
 }

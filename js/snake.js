@@ -158,13 +158,7 @@
     })
 
     return text;
-    // grid.forEach(function(el) { console.log(el)});
   }
-
-  // Board.prototype.run = function () {
-  //   this.snake.move();
-  //   this.render();
-  // }
 
 
 })();

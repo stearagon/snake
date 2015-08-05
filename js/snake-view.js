@@ -33,6 +33,10 @@
     this.board.snake.move();
     if (this.board.snake.over === true) {
       clearInterval(this.stepInterval);
+      $(".main").append("<button>Restart</button>")
+      $("button").click( function(){
+        window.location.reload();
+      })
       return
     }
     this.$el.html(this.board.render());
