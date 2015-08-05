@@ -90,3 +90,7 @@ button:hover {
   color: #000;
   background: #fff;
 }
+
+p {
+  text-align: center;
+}
